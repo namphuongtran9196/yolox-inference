@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/namphuongtran9196/yolox-inference/compare/v0.1.0...v0.1.1) (2023-03-15)
+
+
+### Bug Fixes
+
+* **action:** test tag release package ([1dfe7f1](https://github.com/namphuongtran9196/yolox-inference/commit/1dfe7f1cf743a354257d03c4be0a6d3e4b0bee18))
+
 ## 0.1.0 (2023-03-15)
 
 
