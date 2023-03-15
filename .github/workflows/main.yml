@@ -3,23 +3,17 @@ name: "tagged-release"
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
 
 jobs:
-  tagged-release:
-    name: "Tagged Release"
-    runs-on: "ubuntu-latest"
-
+  release-please:
+    runs-on: ubuntu-latest
     steps:
-      # ...
-      - name: "Build & test"
-        run: |
-          echo "done!"
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: google-github-actions/release-please-action@v3
         with:
-          repo_token: "${{ secrets.TOKEN_GITHUB }}"
-          prerelease: false
-          files: |
-            LICENSE.txt
-            *.jar
+          token: "${{ secrets.TOKEN_GITHUB }}"
+          release-type: python
+          package-name: release-please-action
+          extra-files: |
+            README.md
