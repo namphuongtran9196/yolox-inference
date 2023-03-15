@@ -17,6 +17,3 @@ jobs:
           package-name: release-please-action
           extra-files: |
             README.md
-
-
-
