@@ -1,3 +1,10 @@
+#
+# Created on Fri Mar 17 2023
+#
+# Copyright (c) 2023 Freelancer
+# Contact: namphuongtran9196@gmail.com
+#
+
 import argparse
 
 import cv2
