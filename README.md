@@ -32,8 +32,14 @@ conda create -n yolox python==3.8.* -y
 conda activate yolox
 ```
 - Install libraries
+For CPU only:
 ```bash
 conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cpuonly -c pytorch -y
+pip install -r requirements.txt
+```
+For GPU:
+```bash
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia -y
 pip install -r requirements.txt
 ```
 
