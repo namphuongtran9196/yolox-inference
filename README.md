@@ -51,7 +51,7 @@ cd src && python yolox_onnx.py
 ```bash
 cd src && python yolox_torchscript.py
 ```
-### All the source code about how to use YoloX is located in only one file. You can easily modify it to suit your needs.
+- All the source code about how to use YoloX is located in only one file. You can easily modify it to suit your needs.
 
 ## Support
 
