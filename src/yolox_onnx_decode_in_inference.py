@@ -97,9 +97,7 @@ def non_max_suppression_fast(
         # compute the ratio of overlap
         overlap = (w * h) / area[idxs[:last]]
         # delete all indexes from the index list that have
-        idxs = np.delete(
-            idxs, np.concatenate(([last], np.where(overlap > overlapThresh)[0]))
-        )
+        idxs = np.delete(idxs, np.concatenate(([last], np.where(overlap > overlapThresh)[0])))
     # return only the bounding boxes that were picked using the
     # integer data type
     return pick
@@ -114,7 +112,6 @@ def postprocess(
     confidence_threshold: float = 0.5,
     nms_threshold: float = 0.5,
 ) -> tuple:
-
     """Postprocess the predictions.
     Args:
         predictions (np.ndarray): model predictions.
@@ -157,6 +154,7 @@ def postprocess(
         bboxes = pred[..., :4]
         c_conf = pred[..., 4]
         c_pred = pred[..., 5]
+        # TODO: add support multi-class
         pick = non_max_suppression_fast(bboxes, nms_threshold)
         boxes_xyxy_ret[i][range(len(pick))] = bboxes[pick]
         class_conf_ret[i][range(len(pick))] = c_conf[pick]
@@ -166,7 +164,6 @@ def postprocess(
 
 
 def main(args):
-
     # Load model
     model = ort.InferenceSession(args.model_path)
 
